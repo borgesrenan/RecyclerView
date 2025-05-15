@@ -1,5 +1,6 @@
 package com.devspace.recyclerview
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
@@ -41,7 +42,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         adapter.setOnClickListener { contact ->
-            Log.d("Renan", contact.toString())
+            val intent = Intent(this, ContactDetailActivity::class.java)
+
+            //Passando os dados para a proxima tela
+            intent.putExtra("name", contact.name)
+            intent.putExtra("phone", contact.phone)
+            intent.putExtra("icon", contact.icon)
+
+            startActivity(intent)
         }
     }
 }
