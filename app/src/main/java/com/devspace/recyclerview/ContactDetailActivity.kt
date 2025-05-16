@@ -19,16 +19,19 @@ class ContactDetailActivity : AppCompatActivity() {
         val tvPhone = findViewById<TextView>(R.id.tv_phone)
         val image = findViewById<ImageView>(R.id.image)
         val tvShare = findViewById<TextView>(R.id.tv_share)
+        val tvDescription = findViewById<TextView>(R.id.tv_description)
 
         //Recuperando os dados da tela anterior
         val name = intent.getStringExtra("name") //- Passando a mesma chave, nao pode ser diferente
         val phone = intent.getStringExtra("phone")
+        val description = intent.getStringExtra("description")
         val icon = intent.getIntExtra("icon", R.drawable.sample8) // Obrigatorio um
         // valor default, zero ou um drawable
 
         //Fazendo o biding manualmente
         tvName.text = name
         tvPhone.text = phone
+        tvDescription.text = description
         image.setImageResource(icon)
 
         tvShare.setOnClickListener {

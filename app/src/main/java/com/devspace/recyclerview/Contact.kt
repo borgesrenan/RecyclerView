@@ -5,5 +5,6 @@ import androidx.annotation.DrawableRes
 data class Contact(
     val name: String,
     val phone: String,
-    @DrawableRes val icon: Int
+    @DrawableRes val icon: Int,
+    val description: String
 )
